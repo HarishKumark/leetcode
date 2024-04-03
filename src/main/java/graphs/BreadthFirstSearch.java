@@ -59,6 +59,14 @@ public class BreadthFirstSearch {
     public static void main(String[] args) {
         ArrayList<Edge> graph[] = new ArrayList[7];
         createGraph(graph);
+
+        boolean[] vis = new boolean[graph.length];
+        for (int i = 0; i < graph.length; i++) {
+            if (!vis[i]) {
+                BFSNew(graph, i, vis);
+            }
+        }
+
         BFS(graph);
     }
 
@@ -70,6 +78,29 @@ public class BreadthFirstSearch {
 
         q.add(0);
 
+        while (!q.isEmpty()) {
+            Integer curr = q.remove();
+            if (!vis[curr]) {
+                System.out.print(curr + " ");
+                vis[curr] = true;
+                for (int i = 0; i < graph[curr].size(); i++) {
+                    Edge get = graph[curr].get(i);
+                    q.add(get.dest);
+                }
+            }
+
+        }
+
+        System.out.println("");
+
+    }
+
+    public static void BFSNew(ArrayList<Edge> graph[], int start, boolean[] vis) {
+
+        Queue<Integer> q = new LinkedList<>();
+
+//        boolean[] vis = new boolean[graph.length];
+        q.add(start);
         while (!q.isEmpty()) {
             Integer curr = q.remove();
             if (!vis[curr]) {
