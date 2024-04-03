@@ -17,7 +17,7 @@ public class StreamExamples {
 
         System.out.println("streamEmpty "+streamEmpty);
         
-        Stream<Integer> streamIterated = Stream.iterate(40, n -> n + 2).limit(5);
+        Stream<Integer> streamIterated = Stream.iterate(43, n -> n + 2).limit(5);
 
         streamIterated.forEach(System.out::println);
     }
