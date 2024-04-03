@@ -25,7 +25,7 @@ public class AdjacencyList {
             this.wt = wt;
         }
 
-    }
+    } 
 
     public static void createGraph(ArrayList<Edge> graph[]) {
         for (int i = 0; i < graph.length; i++) {
