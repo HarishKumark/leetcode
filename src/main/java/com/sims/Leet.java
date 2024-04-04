@@ -296,9 +296,28 @@ public class Leet {
         return false;
     }
 
+    public int maxDepth(String s) {
+
+        int count = 0, max = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '(') {
+                count++;
+            }
+
+            if (s.charAt(i) == ')') {
+                max = Math.max(count, max);
+                count--;
+            }
+        }
+        return max;
+    }
+
     public static void main(String[] args) {
 
         Leet l = new Leet();
+
+        String s = "(1+(2*3)+((8)/4))+1";
+        l.maxDepth(s);
 
 //        int[] findIntersectionValues = leet.findIntersectionValues(new int[]{4, 3, 2, 3, 1}, new int[]{2, 2, 5, 2, 3, 6});
 //
