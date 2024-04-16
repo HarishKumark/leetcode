@@ -64,6 +64,7 @@ public class DepthFirstSearch {
 
     }
 
+    //o(V+E)
     public static void DFS(ArrayList<Edge> graph[], int currentNode, boolean[] vis) {
         if (!vis[currentNode]) {
             System.out.print(currentNode+" ");
