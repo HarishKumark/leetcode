@@ -11,12 +11,6 @@ package com.easy;
 public class solutions {
 
     public static void main(String[] args) {
-
-        String input = "edcba";
-        String res = "";
-        for (int i = input.length() - 1; i >= 0; i--) {
-            res += input.charAt(i);
-        }
-        System.out.println(res);
+        System.out.println("awdasdasda");
     }
 }
